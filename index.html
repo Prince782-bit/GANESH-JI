@@ -1,0 +1,95 @@
+﻿!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ganesh Chaturthi Wishing Website</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+
+    /* Global Styles */
+    body {
+        background-color: #f2f2f2;
+        font-family: Arial, sans-serif;
+    }
+
+    header {
+        background-color: #00698f;
+        padding: 20px;
+        text-align: center;
+        color: #ffffff;
+    }
+
+    h1 {
+        font-size: 36px;
+        margin-bottom: 10px;
+    }
+
+    main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+
+    #ganes-image {
+        width: 400px;
+        height: 223px;
+        margin: 20px auto;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    #wishing-message {
+        font-size: 24px;
+        margin-bottom: 20px;
+        color: #333333;
+    }
+
+    #share-button {
+        background-color: #00698f;
+        color: #ffffff;
+        border: none;
+        padding: 10px 20px;
+        font-size: 18px;
+        cursor: pointer;
+    }
+
+        #share-button:hover {
+            background-color: #004d7f;
+        }
+</style>
+<body>
+    <header>
+        <h1>HAPPY GANESH CHATURTHI IN ADVANCE TO VIKAS BHAI :</h1>
+    </header>
+    <main>
+        <img src="gns.jpg" />
+        <p id="wishing-message">May Lord Ganesha bring prosperity, happiness, and good fortune to you and your loved ones!</p>
+        <button id="share-button">Share Your Wishes!</button>
+    </main>
+    <script>
+
+        const shareButton = document.getElementById('share-button');
+
+        shareButton.addEventListener('click', () => {
+            const wishingMessage = document.getElementById('wishing-message').textContent;
+            const shareText = `Happy Ganesh Chaturthi! ${wishingMessage}`;
+            const shareUrl = `https://example.com/ganesh-chaturthi-wishing-website`;
+
+            // Share on social media platforms
+            const socialMediaLinks = [
+                `https://www.facebook.com/sharer/sharer.php?u=${shareUrl}&quote=${shareText}`,
+                `https://twitter.com/intent/tweet?url=${shareUrl}&text=${shareText}`,
+                `https://wa.me/?text=${shareText} ${shareUrl}`,
+            ];
+
+            socialMediaLinks.forEach((link) => {
+                window.open(link, '_blank');
+            });
+        });
+
+    </script>
+</body>
+</html>
